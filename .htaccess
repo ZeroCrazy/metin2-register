@@ -1,0 +1,4 @@
+RewriteEngine On
+RewriteRule ^index$ index.php [L]
+RewriteRule ^register$ register.php [L]
+RewriteRule ^change-language$ change-language.php [L]
