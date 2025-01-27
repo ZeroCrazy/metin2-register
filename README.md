@@ -4,6 +4,13 @@
 
 ¡Hola a todos! Quiero compartir con ustedes mi proyecto llamado **Sistema de Registro de Usuarios Temporal**, diseñado con soporte para captcha y multi-idioma, usando TailwindCSS.
 
+## Instalación
+
+1. Clona el repositorio:
+
+   ```bash
+   git clone https://github.com/ZeroCrazy/metin2-register.git
+
 ## 🔧 Características:
 - ✅ Registro de usuarios con validación de campos.
 - ✅ Soporte para múltiples idiomas con un selector dinámico.
