@@ -1,6 +1,7 @@
 # 🚀 Sistema de Registro de Usuarios con Captcha y Multi-Idioma en TailwindCSS
 
 ![Descargas](https://img.shields.io/github/downloads/ZeroCrazy/metin2-register/latest/total.svg)
+![Descargas](https://img.shields.io/github/downloads/ZeroCrazy/metin2-register/v1.0/total.svg)
 
 ¡Hola a todos! Quiero compartir con ustedes mi proyecto llamado **Sistema de Registro de Usuarios Temporal**, diseñado con soporte para captcha y multi-idioma, usando TailwindCSS.
 
