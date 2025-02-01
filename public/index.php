@@ -2,15 +2,6 @@
 
 session_start();
 
-if (!empty($_POST) && $_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['language'])) {
-    $languageSelected = $_POST['language'];
-    $_SESSION['language'] = $languageSelected;
-
-    header('Content-Type: application/json');
-    echo '{}';
-    return;
-}
-
 $autoloadPath = dirname(__DIR__) . '/vendor/autoload.php';
 
 if (!file_exists($autoloadPath)) {

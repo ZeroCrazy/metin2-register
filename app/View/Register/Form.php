@@ -4,7 +4,7 @@ use Metin2Register\Model\Language;
 use Metin2Register\Model\Translator;
 $language = Language::getCurrentLanguage();
 ?>
-<form id="register-user" class="space-y-6" method="POST" action="/register">
+<form id="register-user" class="space-y-6" method="POST" action="/create-account">
     <div class="mt-6 sm:mx-auto sm:w-full sm:max-w-[800px]">
         <div class="bg-white dark:bg-gray-900 px-8 py-8 shadow sm:rounded-lg">
             <h2 class="text-2xl/9 font-bold tracking-tight text-gray-900 dark:text-gray-100"><?= Translator::translate('Account'); ?></h2>

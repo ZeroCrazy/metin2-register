@@ -2,7 +2,7 @@
 use Metin2Register\Model\Translator;
 ?>
 <div class="fixed top-4 left-4 z-50">
-    <form id="language-form" method="POST">
+    <form id="language-form" action="change-language" method="POST">
         <select name="language" id="language" class="border border-gray-300 rounded-md">
             <option value="es"><?= ucfirst(Translator::translate('Spanish')); ?></option>
             <option value="en"><?= ucfirst(Translator::translate('English')); ?></option>

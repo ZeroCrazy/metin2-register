@@ -11,7 +11,9 @@ services:
     expose:
       - "9000"
     entrypoint: >
-      sh -c "chown -R www-data:www-data /var/www/html/var/cache && 
+      sh -c "apt-get update && apt-get install -y libmariadb-dev && 
+             docker-php-ext-install pdo pdo_mysql && 
+             chown -R www-data:www-data /var/www/html/var/cache && 
              chmod -R 775 /var/www/html/var/cache && 
              php-fpm"
 
@@ -28,6 +30,31 @@ services:
     networks:
       - metin2_register
 
+  mysql:
+    image: mysql:5.6
+    container_name: mysql-container
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+    volumes:
+      - mysql-data:/var/lib/mysql
+    networks:
+      - metin2_register
+    ports:
+      - "3306:3306"
+
+  adminer:
+    image: adminer
+    container_name: adminer-container
+    ports:
+      - "8080:8080"
+    networks:
+      - metin2_register
+
 networks:
   metin2_register:
     driver: bridge
+
+volumes:
+  mysql-data:
+    driver: local

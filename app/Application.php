@@ -2,6 +2,8 @@
 
 namespace Metin2Register;
 
+use Metin2Register\Http\Controller;
+
 class Application
 {
     /**
@@ -10,7 +12,7 @@ class Application
     public function run()
     {
         $this->loadEnv();
-        self::getView('Pages/Register.php');
+        return Controller::getInstance()->dispatch();
     }
 
     /**

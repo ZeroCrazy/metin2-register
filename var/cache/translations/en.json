@@ -28,5 +28,9 @@
     "Enter 6 digits to delete your character.": "Enter 6 digits to delete your character.",
     "Sign up": "Sign up",
     "All rights reserved": "All rights reserved",
-    "Developed with &hearts; by": "Developed with \u2665 by"
+    "Developed with &hearts; by": "Developed with \u2665 by",
+    "Password must be between 8 and 12 characters.": "Password must be between 8 and 12 characters.",
+    "Character deletion must be 6 digits.": "Character deletion must be 6 digits.",
+    "Username must be alphanumeric and between 8 and 12 characters.": "Username must be alphanumeric and between 8 and 12 characters.",
+    "You have registered successfully.": "You have registered successfully."
 }
