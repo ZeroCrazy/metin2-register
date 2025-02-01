@@ -8,6 +8,20 @@
         "catfan/medoo": "^2.1",
         "php": ">=8.3"
     },
+    "authors": [
+        {
+            "role": "Owner",
+            "name": "ZeroCrazy",
+            "email": "zerocrazy@example.com",
+            "homepage": "https://github.com/zerocrazy"
+        },
+        {
+            "role": "Contributor",
+            "name": "Bruno Reis",
+            "email": "bruno.reis@example.com",
+            "homepage": "https://brunoreis.dev"
+        }
+    ],
     "autoload": {
         "psr-4": {
             "Metin2Register\\": "app/"
