@@ -1,0 +1,60 @@
+version: '3.8'
+
+services:
+  php-fpm:
+    image: php:8.3-fpm
+    container_name: php-fpm-container
+    volumes:
+      - .:/var/www/html
+    networks:
+      - metin2_register
+    expose:
+      - "9000"
+    entrypoint: >
+      sh -c "apt-get update && apt-get install -y libmariadb-dev && 
+             docker-php-ext-install pdo pdo_mysql && 
+             chown -R www-data:www-data /var/www/html/var/cache && 
+             chmod -R 775 /var/www/html/var/cache && 
+             php-fpm"
+
+  nginx:
+    image: nginx:latest
+    container_name: nginx-container
+    ports:
+      - "80:80"
+    volumes:
+      - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
+      - .:/var/www/html
+    depends_on:
+      - php-fpm
+    networks:
+      - metin2_register
+
+  mysql:
+    image: mysql:5.6
+    container_name: mysql-container
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+    volumes:
+      - mysql-data:/var/lib/mysql
+    networks:
+      - metin2_register
+    ports:
+      - "3306:3306"
+
+  adminer:
+    image: adminer
+    container_name: adminer-container
+    ports:
+      - "8080:8080"
+    networks:
+      - metin2_register
+
+networks:
+  metin2_register:
+    driver: bridge
+
+volumes:
+  mysql-data:
+    driver: local
