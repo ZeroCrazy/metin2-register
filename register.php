@@ -1,8 +1,4 @@
 <?php
-
-    require 'inc/core.php';
-    header('Content-Type: application/json');
-
     $username = $_POST['username'] ?? null;
     $email = $_POST['email'] ?? null;
     $password = $_POST['password'] ?? null;

@@ -1,13 +1,16 @@
 {
     "name": "zerocrazy/metin2-register",
     "description": "Sistema de registro para Metin2.",
-    "require": {
-        "php": ">=7.4"
-    },
     "type": "library",
     "license": "MIT",
     "require": {
         "stichoza/google-translate-php": "^5.2",
-        "catfan/medoo": "^2.1"
+        "catfan/medoo": "^2.1",
+        "php": ">=8.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Metin2Register\\": "app/"
+        }
     }
 }

@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  php-fpm:
+    image: php:8.3-fpm
+    container_name: php-fpm-container
+    volumes:
+      - .:/var/www/html
+    networks:
+      - metin2_register
+    expose:
+      - "9000"
+    entrypoint: >
+      sh -c "chown -R www-data:www-data /var/www/html/var/cache && 
+             chmod -R 775 /var/www/html/var/cache && 
+             php-fpm"
+
+  nginx:
+    image: nginx:latest
+    container_name: nginx-container
+    ports:
+      - "80:80"
+    volumes:
+      - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
+      - .:/var/www/html
+    depends_on:
+      - php-fpm
+    networks:
+      - metin2_register
+
+networks:
+  metin2_register:
+    driver: bridge
